@@ -26,6 +26,7 @@ class ClipboardWatcher(threading.Thread):
 def copy_to_stdout(text):
     text = text.replace('\n', ' ')
     text = text.replace('\r', '')
+    text = text.replace('- ','')
     pyperclip.copy(text)
     print(text)
 
